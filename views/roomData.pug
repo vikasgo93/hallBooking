@@ -1,0 +1,18 @@
+extends layout
+block content
+    .container
+        h2 Room Data
+        ul
+        each element in data
+            if element.bookingStatus == "yes"
+                li= "Hall Name : " + element.roomName
+                    ul
+                        li= "Booking Status : "+ element.bookingStatus
+                        for item in element.reservationDetails   
+                            li= "Customer Name : "+item.customerName
+                            li= "Start Date : " + item.startDate
+                            li= "End Data : "+item.endDate
+            else
+                li= "Hall Name : " + element.roomName
+                    ul
+                        li= "Booking Status : Available"   

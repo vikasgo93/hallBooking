@@ -1,0 +1,12 @@
+extends layout
+block content
+    .container
+        h2 Customer Data
+        ul
+        each element in data
+            li= "Customer Name : " + element.customerName
+                ul
+                    li= "Room Number : "+ element.roomNo
+                    li= "Hall Name : "+element.roomName
+                    li= "Start Date : " + element.startDate
+                    li= "End Data : "+element.endDate

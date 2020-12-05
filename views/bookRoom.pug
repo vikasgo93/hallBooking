@@ -1,0 +1,23 @@
+extends layout
+block content
+    .container
+        h2 Room Booking Portal
+        form(action = "/booking", method = "POST")
+            .form-group
+                label(for='Customer Name') Customer Name
+                input#customerName.form-control(type='text',name="customerName")
+            .form-group
+                button#startDate.btn.btn-secondary(type='button') Start Date
+                button#endDate.btn.btn-secondary(type='button') End Date
+            .form-group
+                .form-inline
+                    label.sr-only(for='startDateInput') Name
+                    input#startDateInput.form-control.mb-2.mr-sm-2(type='text' placeholder='Start Date', name="startDate")
+                    label.sr-only(for='endDateInput') Name
+                    input#endDateInput.form-control.mb-2.mr-sm-2(type='text' placeholder='End Date', name="endDate")
+            .form-group
+                label(for='roomId') Room ID
+                input#roomId.form-control(type='text', name="roomId")
+            button.btn.btn-primary(type='submit') Submit
+    script(src="https://unpkg.com/js-datepicker")
+    script(src="/js/domUsage.js")

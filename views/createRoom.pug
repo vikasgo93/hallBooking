@@ -1,0 +1,33 @@
+extends layout
+
+block content
+   
+    .container
+        h1 Hall Booking System
+        form(action = "/thanks", method = "POST")
+            .form-group
+                label(for='noOfSeats') Seating Capacity
+                select#noOfSeats.form-control(name='seats')
+                    option 30
+                    option 50
+                    option 70
+                    option 90
+                    option 100
+            .form-group
+                .form-check.form-check-inline
+                    input#inlineCheckbox1.form-check-input(type='checkbox' name='amenities', value="AC")
+                    label.form-check-label(for='inlineCheckbox1') AC
+                .form-check.form-check-inline
+                    input#inlineCheckbox2.form-check-input(type='checkbox' name='amenities' value="WiFi")
+                    label.form-check-label(for='inlineCheckbox2') Wi-Fi
+                .form-check.form-check-inline
+                    input#inlineCheckbox3.form-check-input(type='checkbox' name='amenities' value="SmartTV")
+                    label.form-check-label(for='inlineCheckbox3') Smart TV
+            .form-group
+                label(for='priceForOneHour') Price/Hour
+                input#priceForOneHour.form-control(type='text' name='price')
+            .form-group
+                label(for='roomName') Room Name
+                input#priceForOneHour.form-control(type='text' name='roomName')
+            button.btn.btn-primary(type='submit') Submit
+
